@@ -1,16 +1,15 @@
 import { ChangeEvent, useState } from 'react';
-import { CardNumberInputProps } from './CardNumber.interface';
-import styles from './CardNumber.module.scss';
+import { NumberInputProps } from './Number.interface';
+import styles from './Number.module.scss';
 
 const formatCardNumber = (value: string): string => {
   return value
-    .replace(/\W/gi, '')
-    .replace(/(.{4})/g, '$1 ')
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .replace(/(\d{4})/g, '$1 ')
     .trim();
 };
 
-const CardNumber = ({
-  name,
+const CardNumber = <TFieldName extends string>({
   label,
   type,
   id,
@@ -19,15 +18,16 @@ const CardNumber = ({
   errorMessage,
   classNameInput,
   classNameLabel,
-  onChange,
-}: CardNumberInputProps): JSX.Element => {
+  maxLength,
+}: NumberInputProps<TFieldName>): JSX.Element => {
   const [cardNumber, setCardNumber] = useState('');
+  const { onChange, name } = { ...hookData };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value } = event.target;
     const formattedValue = formatCardNumber(value);
     setCardNumber(formattedValue);
-    onChange(formattedValue.replace(/\s/g, ''));
+    onChange(event);
   };
 
   return (
@@ -38,13 +38,12 @@ const CardNumber = ({
       <input
         type={type}
         id={id}
-        name={name}
         value={cardNumber}
         placeholder={placeholder}
         {...hookData}
         className={`${classNameInput} ${errorMessage ? styles['input-error'] : ''}`}
         onChange={handleChange}
-        maxLength={19}
+        maxLength={maxLength}
       />
       {errorMessage && <div className={styles.error}>{errorMessage}</div>}
     </div>
