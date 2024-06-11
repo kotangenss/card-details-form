@@ -4,7 +4,7 @@ import TextInput from '../Inputs/Text/Text';
 import styles from './Form.module.scss';
 import CardNumber from '../Inputs/Number/Number';
 import { FormData } from './Form.interface';
-import { validateCardNumber } from '../../utils/validation';
+import { validateDefault, validateMonth, validateYear } from '../../utils/validation';
 import { setName, setNumber, setMonth, setYear, setCvc } from '../../store/dataSlice';
 
 const Form = (): JSX.Element => {
@@ -55,7 +55,7 @@ const Form = (): JSX.Element => {
         classNameInput={styles.input}
         hookData={register('cardNumber', {
           required: "Can't be blank",
-          validate: validateCardNumber,
+          validate: validateDefault,
         })}
         maxLength={19}
         errorMessage={errors.cardNumber?.message as string}
@@ -73,7 +73,10 @@ const Form = (): JSX.Element => {
           id="month"
           hookData={register('month', {
             required: "Can't be blank",
-            validate: validateCardNumber,
+            validate: {
+              validateDefault,
+              validateMonth,
+            },
           })}
           errorMessage={errors.month?.message as string}
           isValid={!errors.month && dirtyFields.month}
@@ -88,7 +91,10 @@ const Form = (): JSX.Element => {
           id="year"
           hookData={register('year', {
             required: "Can't be blank",
-            validate: validateCardNumber,
+            validate: {
+              validateDefault,
+              validateYear,
+            },
           })}
           errorMessage={errors.year?.message as string}
           isValid={!errors.year && dirtyFields.year}
@@ -103,7 +109,7 @@ const Form = (): JSX.Element => {
           id="cvc"
           hookData={register('cvc', {
             required: "Can't be blank",
-            validate: validateCardNumber,
+            validate: validateDefault,
           })}
           errorMessage={errors.cvc?.message as string}
           isValid={!errors.cvc && dirtyFields.cvc}
