@@ -1,17 +1,30 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import TextInput from '../Inputs/Text/Text';
 import styles from './Form.module.scss';
 import CardNumber from '../Inputs/Number/Number';
 import { FormData } from './Form.interface';
 import { validateCardNumber } from '../../utils/validation';
+import { setName, setNumber, setMonth, setYear, setCvc } from '../../store/dataSlice';
 
 const Form = (): JSX.Element => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     formState: { errors, dirtyFields },
+    watch,
   } = useForm<FormData>({
     mode: 'onChange',
+  });
+
+  watch((value) => {
+    if (value.cardholderName) dispatch(setName(value.cardholderName));
+    if (value.cardNumber) dispatch(setNumber(value.cardNumber));
+    if (value.month) dispatch(setMonth(value.month));
+    if (value.year) dispatch(setYear(value.year));
+    if (value.cvc) dispatch(setCvc(value.cvc));
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {

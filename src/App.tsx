@@ -1,15 +1,8 @@
-import { FormProvider, useForm } from 'react-hook-form';
 import './App.css';
-import Form from './components/Form/Form';
+import CardPage from './components/CardPage/CardPage';
 
 const App = (): JSX.Element => {
-  const methods = useForm();
-
-  return (
-    <FormProvider {...methods}>
-      <Form />
-    </FormProvider>
-  );
+  return <CardPage />;
 };
 
 export default App;

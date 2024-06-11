@@ -1,0 +1,16 @@
+@import '../../styles/mixins.scss';
+
+.front {
+  @include card-display(url('../../assets/images/bg-card-front.svg') no-repeat, flex-start, flex-end);
+  user-select: none;
+}
+
+.number {
+  font-size: 30px;
+}
+
+.row-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

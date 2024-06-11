@@ -20,3 +20,16 @@
 @mixin input-error {
   border: 1px solid $red;
 }
+
+@mixin card-display($background, $alignItems, $justifyContent) {
+  display: flex;
+  flex-direction: column;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  width: 450px;
+  height: 250px;
+  background: $background;
+  color: white;
+  padding: 35px;
+  border-radius: 10px;
+}

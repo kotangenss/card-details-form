@@ -6,6 +6,7 @@ const formatCardNumber = (value: string): string => {
   return value
     .replace(/[^a-zA-Z0-9]/g, '')
     .replace(/(\d{4})/g, '$1 ')
+    .toUpperCase()
     .trim();
 };
 
