@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { NumberInputProps } from './Number.interface';
 import styles from './Number.module.scss';
 
-const formatCardNumber = (value: string): string => {
+const formatNumber = (value: string): string => {
   return value
     .replace(/[^a-zA-Z0-9]/g, '')
     .replace(/(\d{4})/g, '$1 ')
@@ -26,7 +26,7 @@ const NumberInput = <TFieldName extends string>({
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value } = event.target;
-    const formattedValue = formatCardNumber(value);
+    const formattedValue = formatNumber(value);
     setCardNumber(formattedValue);
     onChange(event);
   };
