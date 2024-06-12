@@ -1,12 +1,73 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
 .container {
+  display: flex;
+  flex-direction: column;
   padding: 25px;
   width: 430px;
-  background: lightblue;
+  height: fit-content;
+  row-gap: 20px;
 }
 
 .input {
-  width: 380px;
+  @include inputText;
+  width: 100%;
   height: 50px;
-  border-radius: 5px;
   padding: 15px;
+  border-radius: 5px;
+  border: 1px solid $border;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: $placeholders;
+    @include inputText;
+  }
+
+  &:focus {
+    border: 1px solid $borderFocus;
+  }
+
+  &:hover {
+    border: 1px solid $borderFocus;
+  }
+}
+
+.data-label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 80px 80px 180px;
+  gap: 20px;
+}
+
+.button {
+  font-size: 15px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: $darkPurple;
+  margin: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background: $hover;
+    transition: all 0.3s ease;
+  }
+
+  &:active {
+    background: $active;
+  }
+
+  &:disabled {
+    cursor: default;
+    background: $disable;
+  }
 }

@@ -1,13 +1,25 @@
 @import '../../../styles/mixins.scss';
 
+  label {
+    @include label;
+  }
+
 .input-container {
   @include input-container;
-}
 
-.error {
-  @include error;
+  &:last-child {
+    margin-top: -13px;
+  }
+
+    .error {
+      @include error;
+    }
 }
 
 .input-error {
   @include input-error;
+}
+
+.cvc {
+  margin-top: -50px;
 }

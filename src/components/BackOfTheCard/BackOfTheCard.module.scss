@@ -3,7 +3,6 @@
 
 .back {
   @include card-display(url('../../assets/images/bg-card-back.png') no-repeat, flex-end, center);
-  user-select: none;
 }
 
 .cvc {

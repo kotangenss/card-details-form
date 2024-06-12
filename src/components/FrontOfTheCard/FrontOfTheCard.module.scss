@@ -2,7 +2,7 @@
 
 .front {
   @include card-display(url('../../assets/images/bg-card-front.svg') no-repeat, flex-start, flex-end);
-  user-select: none;
+  margin-bottom: 20px;
 }
 
 .number {

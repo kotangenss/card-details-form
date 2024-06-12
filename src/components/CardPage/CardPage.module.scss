@@ -1,5 +1,9 @@
 .container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  margin: 0 auto;
   column-gap: 120px;
 }
 
@@ -7,6 +11,7 @@
   display: flex;
   flex-direction: column;
   width: 540px;
+  user-select: none;
 
   > :first-child {
       align-self: flex-start;

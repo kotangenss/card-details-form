@@ -10,7 +10,7 @@ const formatCardNumber = (value: string): string => {
     .trim();
 };
 
-const CardNumber = <TFieldName extends string>({
+const NumberInput = <TFieldName extends string>({
   label,
   type,
   id,
@@ -51,4 +51,4 @@ const CardNumber = <TFieldName extends string>({
   );
 };
 
-export default CardNumber;
+export default NumberInput;

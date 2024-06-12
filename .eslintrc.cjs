@@ -63,7 +63,8 @@ module.exports = {
     ],
     'jsx-a11y/label-has-associated-control': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
+    'react/button-has-type': 'off',
   },
   settings: {
     react: {
