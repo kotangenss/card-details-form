@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  name: 'Jane Appleseed',
+  name: 'JANE APPLESEED',
   number: '0000 0000 0000 0000',
   month: '00',
   year: '00',
   cvc: '000',
+  isSubmitted: false,
 };
 
 const dataSlice = createSlice({
@@ -27,9 +28,16 @@ const dataSlice = createSlice({
     setCvc(state, action) {
       state.cvc = action.payload;
     },
+    resetCardDetails() {
+      return initialState;
+    },
+    setIsSubmitted(state) {
+      state.isSubmitted = !state.isSubmitted;
+    },
   },
 });
 
-export const { setName, setNumber, setMonth, setYear, setCvc } = dataSlice.actions;
+export const { setName, setNumber, setMonth, setYear, setCvc, resetCardDetails, setIsSubmitted } =
+  dataSlice.actions;
 
 export default dataSlice.reducer;

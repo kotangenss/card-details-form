@@ -44,30 +44,3 @@
   grid-template-columns: 80px 80px 180px;
   gap: 20px;
 }
-
-.button {
-  font-size: 15px;
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background: $darkPurple;
-  margin: 0;
-  transition: all 0.3s ease;
-
-  &:hover {
-    cursor: pointer;
-    background: $hover;
-    transition: all 0.3s ease;
-  }
-
-  &:active {
-    background: $active;
-  }
-
-  &:disabled {
-    cursor: default;
-    background: $disable;
-  }
-}

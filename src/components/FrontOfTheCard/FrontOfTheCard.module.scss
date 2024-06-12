@@ -3,14 +3,35 @@
 .front {
   @include card-display(url('../../assets/images/bg-card-front.svg') no-repeat, flex-start, flex-end);
   margin-bottom: 20px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 84px;
+    height: 47px;
+    background: url('../../assets/images/card-logo.svg') no-repeat;
+    top: 25px;
+    left: 30px;
+  }
 }
 
 .number {
   font-size: 30px;
+  margin: 10px 0 0;
 }
 
 .row-bottom {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  p {
+    &:first-child {
+      letter-spacing: 2px;
+    }
+
+    &:last-child {
+      font-size: 17px;
+    }
+  }
 }

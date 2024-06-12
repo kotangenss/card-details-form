@@ -19,3 +19,7 @@ export const validateYear = (value: string): boolean | string => {
   }
   return true;
 };
+
+export const validateCVC = (value: string): boolean | string => {
+  return value.length === 3 || 'CVC must be 3 digits';
+};
