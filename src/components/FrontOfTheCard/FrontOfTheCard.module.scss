@@ -25,9 +25,13 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+
   p {
     &:first-child {
       letter-spacing: 2px;
+      word-wrap: break-word;
+      text-align: left;
+      max-width: 300px;
     }
 
     &:last-child {

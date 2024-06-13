@@ -4,7 +4,13 @@ import TextInput from '../Inputs/Text/Text';
 import styles from './Form.module.scss';
 import NumberInput from '../Inputs/Number/Number';
 import { FormData } from './Form.interface';
-import { validateCVC, validateDefault, validateMonth, validateYear } from '../../utils/validation';
+import {
+  validateCVC,
+  validateDefault,
+  validateMonth,
+  validateText,
+  validateYear,
+} from '../../utils/validation';
 import {
   setName,
   setNumber,
@@ -58,7 +64,9 @@ const Form = (): JSX.Element => {
             classNameInput={styles.input}
             hookData={register('cardholderName', {
               required: "Can't be blank",
+              validate: validateText,
             })}
+            maxLength={72}
             errorMessage={errors.cardholderName?.message as string}
             isValid={!errors.cardholderName && dirtyFields.cardholderName}
           />

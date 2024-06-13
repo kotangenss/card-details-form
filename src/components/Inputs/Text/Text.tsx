@@ -16,6 +16,7 @@ const TextInput = <TFieldName extends string>({
   errorMessage,
   classNameInput,
   classNameLabel,
+  maxLength,
 }: TextInputProps<TFieldName>): JSX.Element => {
   const [text, setText] = useState('');
   const { onChange } = { ...hookData };
@@ -43,6 +44,7 @@ const TextInput = <TFieldName extends string>({
         {...hookData}
         className={`${classNameInput} ${errorMessage ? styles['input-error'] : ''}`}
         onChange={handleChange}
+        maxLength={maxLength}
       />
       {errorMessage && <div className={styles.error}>{errorMessage}</div>}
     </div>

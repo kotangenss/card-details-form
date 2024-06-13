@@ -9,5 +9,6 @@ export interface TextInputProps<TFieldName extends string> {
   errorMessage?: string;
   classNameInput?: string;
   classNameLabel?: string;
+  maxLength: number;
   isValid?: boolean;
 }
