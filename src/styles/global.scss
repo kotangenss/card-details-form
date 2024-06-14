@@ -1,17 +1,10 @@
 @import 'normalize';
 @import 'mixins';
 
-#root {
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 html {
-  height: 100%;
+  min-height: 100%;
   box-sizing: border-box;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 *,
@@ -43,7 +36,7 @@ body {
     top: 0;
     right: 0;
     height: 100%;
-    width: 5vw;
+    width: 3vw;
     background: $gradient;
     z-index: -1;
   }
@@ -71,4 +64,23 @@ input {
   margin: 0;
   box-shadow: none;
   appearance: none;
+}
+
+@media (max-width: 1050px) {
+  body {
+    &::before {
+      height: 230px;
+      width: 100%;
+    }
+
+    &::after {
+      height: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0rem 2rem 0 0;
+  }
 }

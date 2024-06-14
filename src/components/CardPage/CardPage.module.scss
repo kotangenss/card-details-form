@@ -14,10 +14,70 @@
   user-select: none;
 
   > :first-child {
-      align-self: flex-start;
-    }
-  
+    align-self: flex-start;
+  }
+
   > :last-child {
     align-self: flex-end;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    column-gap: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card-display {
+    flex-direction: column;
+    width: 440px;
+    height: 220px;
+    position: relative;
+    margin-left: -70px;
+    margin-top: 15%;
+
+    > :first-child {
+      position: absolute;
+      align-self: flex-start;
+      z-index: 1;
+    }
+
+    > :last-child {
+      margin: -102px -70px 0 0;
+      align-self: flex-end;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card-display {
+    max-width: 400px;
+    height: 220px;
+    margin-left: 10%;
+
+    > :first-child {
+      align-self: flex-end;
+    }
+
+    > :last-child {
+      margin: -84px -30px 0 -40px;
+      align-self: flex-start;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .card-display {
+    max-width: 380px;
+    margin-left: 16%;
+
+    > :last-child {
+      margin: -69px -30px 0 -40px;
+    }
   }
 }

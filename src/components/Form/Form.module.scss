@@ -8,6 +8,10 @@
   width: 430px;
   height: fit-content;
   row-gap: 20px;
+
+  button {
+    @include button;
+  }
 }
 
 .input {
@@ -28,8 +32,10 @@
     border: 1px solid $borderFocus;
   }
 
-  &:hover {
-    border: 1px solid $borderFocus;
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid $borderFocus;
+    }
   }
 }
 
@@ -43,4 +49,32 @@
   display: grid;
   grid-template-columns: 80px 80px 180px;
   gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 450px;
+    row-gap: 15px;
+  }
+
+  .date {
+    grid-template-columns: 80px 80px auto;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .date {
+    grid-template-columns: 70px 70px auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .date {
+    grid-template-columns: 55px 55px auto;
+  }
 }

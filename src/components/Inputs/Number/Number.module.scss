@@ -1,8 +1,8 @@
 @import '../../../styles/mixins.scss';
 
-  label {
-    @include label;
-  }
+label {
+  @include label;
+}
 
 .input-container {
   @include input-container;
@@ -11,9 +11,9 @@
     margin-top: -13px;
   }
 
-    .error {
-      @include error;
-    }
+  .error {
+    @include error;
+  }
 }
 
 .input-error {
