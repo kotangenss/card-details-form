@@ -6,4 +6,5 @@
   max-width: 1280px;
   overflow-y: auto;
   overflow-x: hidden;
+  min-height: 100vh;
 }

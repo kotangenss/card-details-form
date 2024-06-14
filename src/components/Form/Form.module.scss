@@ -23,6 +23,11 @@
   border: 1px solid $border;
   transition: all 0.3s ease;
 
+  &::selection {
+      background-color: $hover;
+      color: white;
+    }
+
   &::placeholder {
     color: $placeholders;
     @include inputText;
